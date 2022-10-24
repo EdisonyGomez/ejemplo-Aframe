@@ -1,0 +1,483 @@
+<html>
+
+<head>
+	<script src="/js/aframe.min.js"></script>
+	<script src="/js/aframe-environment-component.min.js"></script>
+	<script src="/js/aframe-extras.min.js"></script>
+	<script src="/js/aframe-web-portals.umd.js"></script>
+	<!-- <script	src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script> -->
+	<title>index</title>
+</head>
+
+<body>
+	<a-scene physics> 
+
+		<!-- ****************************** ASSETS *************************************-->
+		<a-assets>
+			<img id="pared" src="./assets/pared2.jpg">
+			<img id="pisoLadrillo" src="/assets/piso.jpeg">
+			<img id="maquinaMonedas" src="./assets/slot-machine-money-ss.jpg">
+			<img id="adornoEntrada" src="/assets/entrada_casino.png">
+			<img id="iconoAguas" src="/assets/icono_aguas.PNG">
+			<img id="pisoTerracota" src="/assets/piso2.jpg">
+			<img id="barras" src="/assets/barras.jpg">
+			<img id="pisoAtencion" src="/assets/piso_marron.jpg" alt="">
+
+			<a-asset-item id="banco" src="/banco/Dollar_sign_2.obj"></a-asset-item>
+		</a-assets>
+		<!-- ******************************  *************************************-->
+
+
+		<!--*************************** Camara *************************************** -->
+		<a-entity id="rig" position="0 1 50" >
+			<a-camera camera look-controls="pointerLockEnabled: true">
+				<a-cursor position="0 0 -.05" scale=".04 .04 1"></a-cursor>
+			<!--For Collision Detection-->
+			<a-cylinder radius="0.75"></a-cylinder>
+			</a-camera>			
+		</a-entity>
+		<!--*************************** Camara fin *************************************** -->
+
+
+		<!-- ************************** Paisaje ******************************************-->
+		<a-entity id="environment" position="0 -0.5 0"
+			environment="preset: forest;  
+				groundColor:#1D5200; 
+				skyType:atmosphere; groundTexture: walkernoise; dressing: mushrooms; dressingAmount: 1;
+				ground: flat; groundYScale: 3.01; dressingScale: 0.5; fog:0.250;">
+		</a-entity>
+
+		<!-- Ciudad  -->
+		<a-gltf-model src="/scena- city2.glb" position="0 0 0"></a-gltf-model>
+		<a-plane position="-5.339 1.790 13.090" rotation="180.010 90.000 0" scale="3.356 1.248 1.000"> </a-plane>
+		<a-plane position="-2.667 1.801 13.140" rotation="0 90.000 0" scale="3.425 1.260 1"> </a-plane>
+		<a-plane position="-4.02738 2.61185 22.20581" scale="2.16154 0.33766 1" material="color: #020202"
+			geometry="primitive: box; height: 1.09; width: 0.94; depth: 0.12" id="letreroBus">
+			<a-entity id="texto" position="0.01084 0.05145 0.06711" scale="1 3.577 1"
+				text="color: #fff700; align: center; value: Aguas Kpital; width: 3.71; font: kelsonsans; alphaTest: -1.25; height: 0.23">
+			</a-entity>			
+		</a-plane>
+		<a-plane position="-3.982 2.31763 10.574" rotation="0 180 0" scale="1.65729 0.30337 1" material="" geometry="">
+		</a-plane>
+		
+		<a-plane position="-3.95721 1.15578 10.50202" rotation="0 180 0" scale="1.48408 0.76547 1" src="#iconoAguas"
+			material="color: #aecbcb" geometry="">
+		</a-plane>
+
+		<a-entity id="tilde1" geometry="primitive: cylinder" scale="0.27902 0.42852 0.139" rotation="-11.874 -1.026 -7.601"
+			position="-45.339 18.203 -44.770" material="opacity: 0.46; color: #f1ca04; metalness: 0.57"></a-entity>
+		<a-entity id="tilde2" geometry="primitive: cylinder" scale="0.06948 0.3516 0.08027"
+			rotation="5.5525339926128074 -2.81895235204365 -15.579295407402213" position="45.37218 16.44019 -13.54659"
+			material="opacity: 0.48; color: #1cabce; metalness: 0.34; roughness: 1"></a-entity>
+
+		<!-- **************************         ******************************************-->
+
+		
+
+		
+		<!-- ****************************** Carretera ************************************************* -->
+		<a-box rotation="90 0 90" color="#413F42" height="15" width="180" position="0 -0.463 0">
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2"></a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="40 0 0 ">
+			</a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="32 0 0 ">
+			</a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="24 0 0 ">
+			</a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="16 0 0 ">
+			</a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="8 0 0 ">
+			</a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="-8 0 0 ">
+			</a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="-16 0 0 ">
+			</a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="-24 0 0 ">
+			</a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="-32 0 0 ">
+			</a-box>
+			<a-box rotation="90 0 0" roughness="0.5" color="white" height="1.1" width="2" position="-40 0 0 ">
+			</a-box>
+		</a-box>
+		<!--*************************** Carretera fin *****************************************************-->
+
+	
+		<!--**************************** Pasillo Casino ****************************************************-->
+		<a-entity id="pasilloCasino" position="-7.647 -0.454 0.000">
+			<a-box height="15" width="8" depth="0.5" position="-19.72319 -0.55091 -4.731" rotation="90 90 0"
+				src="#pisoTerracota"
+				material="offset: 0 0.01; repeat: 0.58 1; metalness: 0.06; metalnessTextureOffset: 0.23 0"
+				geometry="height: 26.03; width: 13.72; depth: 1.99" id="pisoTerracota">
+			</a-box>
+			<!-- Barras -->
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-8.02003 1.34794 1.68287"></a-entity>
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-13.40055 1.34794 1.66472"></a-entity>
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-18.63552 1.34794 1.64984"></a-entity>
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-24.00805 1.34794 1.6309"></a-entity>
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-8.02003 1.34794 -11.10497"></a-entity>
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-13.48667 1.34794 -11.09385"></a-entity>
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-18.95253 1.34794 -11.0954"></a-entity>
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-24.42898 1.34794 -11.0954"></a-entity>
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-31.61743 1.34794 -11.0954"></a-entity>
+			<a-entity id="barras" geometry="primitive: cylinder; height: 5.14; radius: 0.39"
+				material="src:#barras; offset: 0.16 0.15; repeat: -0.37 0.83; roughness: 1"
+				position="-31.77004 1.34794 1.6946"></a-entity>
+
+			<!-- Cuerdas -->
+			<a-entity geometry="primitive: torus; radius: 4.12; arc: 60.82; radiusTubular: 0.1"
+				rotation="3.78901 179.75298 -114.66789" position="-9.90852 7.024 1.42846"
+				material="offset: 1.62 0.56; repeat: 1.48 1; color: #d31717; metalness: 0.31; normalScale: 2.81 1; roughness: 0"
+				id="cuerda" scale="1.03 1.28 1.37"></a-entity>
+			<a-entity geometry="primitive: torus; radius: 4.12; arc: 60.82; radiusTubular: 0.1"
+				rotation="3.78901 179.75298 -114.66789" position="-15.29107 7.024 1.42846"
+				material="offset: 1.62 0.56; repeat: 1.48 1; color: #d31717; metalness: 0.31; normalScale: 2.81 1; roughness: 0"
+				id="cuerda" scale="1.03 1.28 1.37"></a-entity>
+			<a-entity geometry="primitive: torus; radius: 4.12; arc: 60.82; radiusTubular: 0.1"
+				rotation="3.78901 179.75298 -114.66789" position="-20.61723 7.024 1.40204"
+				material="offset: 1.62 0.56; repeat: 1.48 1; color: #d31717; metalness: 0.31; normalScale: 2.81 1; roughness: 0"
+				id="cuerda" scale="1.03 1.28 1.37"></a-entity>
+			<a-entity geometry="primitive: torus; radius: 4.12; arc: 80.83; radiusTubular: 0.1"
+				rotation="4.3218206486718 -179.35011382082595 -122.58775801501041" position="-26.868 7.3 1.34869"
+				material="offset: 1.62 0.56; repeat: 1.48 1; color: #d31717; metalness: 0.31; normalScale: 2.81 1; roughness: 0"
+				id="cuerda" scale="1.18 1.51 1.56"></a-entity>
+			<a-entity geometry="primitive: torus; radius: 4.12; arc: 60.82; radiusTubular: 0.1"
+				rotation="3.78901 179.75298 -114.66789" position="-10.02328 7.024 -11.34413"
+				material="offset: 1.62 0.56; repeat: 1.48 1; color: #d31717; metalness: 0.31; normalScale: 2.81 1; roughness: 0"
+				id="cuerda" scale="1.03 1.28 1.37"></a-entity>
+			<a-entity geometry="primitive: torus; radius: 4.12; arc: 60.82; radiusTubular: 0.1"
+				rotation="3.78901 179.75298 -114.66789" position="-15.44598 7.024 -11.37221"
+				material="offset: 1.62 0.56; repeat: 1.48 1; color: #d31717; metalness: 0.31; normalScale: 2.81 1; roughness: 0"
+				id="cuerda" scale="1.03 1.28 1.37"></a-entity>
+			<a-entity geometry="primitive: torus; radius: 4.12; arc: 60.82; radiusTubular: 0.1"
+				rotation="3.78901 179.75298 -114.66789" position="-20.94296 7.054 -11.36143"
+				material="offset: 1.62 0.56; repeat: 1.48 1; color: #d31717; metalness: 0.31; normalScale: 2.81 1; roughness: 0"
+				id="cuerda" scale="1.03 1.28 1.37"></a-entity>
+			<a-entity geometry="primitive: torus; radius: 4.12; arc: 91; radiusTubular: 0.1"
+				rotation="7.2146845562873265 179.71852568309507 -129.44434394934098"
+				position="-27.28625 6.54443 -11.48025"
+				material="offset: 1.62 0.56; repeat: 1.48 1; color: #d31717; metalness: 0.31; normalScale: 2.81 1; roughness: 0"
+				id="cuerda" scale="1.03 1.28 1.37"></a-entity>
+			<!--  Cuerdas fin -->
+		</a-entity>
+		<!--************************************* Pasillo Casino fin  ****************************************************-->
+
+
+
+		<!-- Luz entorno -->
+		<a-entity id="pointLight" light="angle:1;intensity:0.8;type:hemisphere" position="0 0 0">
+		</a-entity>
+
+		
+
+
+		<!--****************** ********************  CASINO ********************************* -->
+		<!--Portal casino--> 
+
+		<!-- flecha -->
+		<a-entity id="flecha" position="-35.911 5.80593 -6.805" rotation="21.809 -134.712 -179.666"
+			animation="property: position; to: -35.911 7 -6.805; dir: alternate; loop: true"
+			text="color: black; align: center; value: Bienvenido; width: 1.5" geometry="primitive: cone"
+			material="color: #e40707; metalness: 0.46; roughness: 0.6">
+			<a-entity id="size" position="-0.069 -1.925 0.164" scale="0.593 2.837 0.539" rotation="3.875 87.323 -3.975"
+				geometry="primitive: cylinder" material="color: #d31717; offset: -0.83 0; metalness: 0.31; roughness: 0.84">
+			</a-entity>
+		</a-entity>
+		<a-entity
+			position="-35 2 -6" rotation="0 90 0"
+			web-portal="url:casino.html; text:Bienvenido;">
+		</a-entity>
+
+		<a-box static-body="" material="src:#pared; roughness: 0.9; normalTextureRepeat: 2 2; normalScale: 1 -1"
+			position="-49.609 4.828 -3.802" rotation="0.05 59.99999999999999 0" height="8" width="5" depth="4"
+			geometry="height: 7.7" id="casinoK">	  
+		
+			<!-- Piso -->
+			<a-plane static-body="" src="#pisoLadrillo" rotation="90 -60.78 0" position="-0.05259 -7.16845 -2.54742"
+				height="20" width="23"
+				material="offset: 0.03 0.01; repeat: 1.04 1.06; normalTextureRepeat: 1.02 1; roughness: 0.57"
+				geometry="primitive: box; height: 20.06; width: 22.93; depth: 3.25" scale="1 1.14 1.75" id="pisoCasino">
+			</a-plane>
+
+			<a-entity rotation="-1.08 0 0">
+				<!-- Cartel -->
+				<a-box static-body="" color="black" position="1.16575 10.01307 0.27288" width="30" height="15" depth="2"
+					material="" geometry=""> </a-box>
+				<a-box static-body="" color="white" position="1.31344 9.50299 0.88015" width="26" height="10" depth="2"
+					material="" geometry=""> </a-box>
+
+				<!-- Bombillos (arriba)-->
+				<a-entity static-body="" position="1.3 17 2.3"
+					animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+					text="color: yellow; align: center; value: . . . . . . . . . . . . . . . .; width: 80">
+				</a-entity>
+
+				<!-- Bombillos (Derecha)-->
+				<a-entity static-body="" position="14 9.5 2.3" rotation="0 0 90"
+					animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+					text="color: yellow; align: center; value: . . . . . .; width: 80">
+				</a-entity>
+
+				<!-- Bombillos (Izquierda)-->
+				<a-entity static-body="" position="-14 9.5 2.3" rotation="0 0 90"
+					animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+					text="color: yellow; align: center; value: . . . . . . .; width: 80">
+				</a-entity>
+
+				<!-- Bombillos (abajo)-->
+				<a-entity static-body="" position="1.3 4.5 2.3"
+					animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+					text="color: yellow; align: center; value: . . . . . . . . . . . . . . . .; width: 80">
+				</a-entity>
+
+				<!-- Texto -->
+				<a-entity position="2.1 12.2 2.3"
+					animation="property: components.text.material.uniforms.color.value; type: color; to: red; dir: alternate"
+					text="color: white; align: center; value: CASINO KPITAL; width: 80; font: kelsonsans">
+				</a-entity>
+				<a-plane static-body="" src="#maquinaMonedas" position="0.75001 6.45229 2.56665" height="8" width="10"
+					material="" geometry="" rotation="0.34 2.68 0"> </a-plane>
+
+
+				<!-- Monedas -->
+				<a-entity id="Kptoken" geometry="primitive: torus; radius: 1.44; arc: 360.32; radiusTubular: 0.83"
+					position="-9.33213 6.80808 2.58903" depth="10" scale="0.54 0.53 0.14"
+					material="alphaTest: 1; offset: -0.47 0; repeat: 1.09 1; ambientOcclusionMapIntensity: 0; 
+							  ambientOcclusionTextureRepeat: 0 0; color: #f9d122; displacementBias: 0; 
+							  emissive: #6a0606; emissiveIntensity: 3.34; height: 256.08; metalness: 0.27; 
+							  metalnessTextureOffset: -0.19 0.02; metalnessTextureRepeat: 1.25 1.83; normalScale: 0.92 1; roughness: 1"
+					rotation="-4.43 -20.41 0">
+					<a-entity position="31.5 -0.1 2" text="width: 65; color: aqua; value: K; font: kelsonsans">
+					</a-entity>
+				</a-entity>
+				<a-entity id="Kptoken" geometry="primitive: torus; radius: 1.44; arc: 360.32; radiusTubular: 0.83"
+					position="-5.99869 6.80808 3.76944" depth="10" scale="0.54 0.53 0.14"
+					material="alphaTest: 1; offset: -0.47 0; repeat: 1.09 1; ambientOcclusionMapIntensity: 0; 
+							 ambientOcclusionTextureRepeat: 0 0; color: #f9d122; displacementBias: 0; 
+							emissive: #6a0606; emissiveIntensity: 3.34; height: 256.08; metalness: 0.27; 
+							metalnessTextureOffset: -0.19 0.02; metalnessTextureRepeat: 1.25 1.83; normalScale: 0.92 1; roughness: 1"
+					rotation="-50 -20.41 0">
+					<a-entity position="31.5 -0.1 2" text="width: 65; color: aqua; value: K; font: kelsonsans">
+					</a-entity>
+				</a-entity>
+				<a-entity id="Kptoken" geometry="primitive: torus; radius: 1.44; arc: 360.32; radiusTubular: 0.83"
+					position="7.01344 7.0163 3.39219" depth="10" scale="0.54 0.53 0.14"
+					material="alphaTest: 1; offset: -0.47 0; repeat: 1.09 1; ambientOcclusionMapIntensity: 0; 
+								ambientOcclusionTextureRepeat: 0 0; color: #f9d122; displacementBias: 0; 
+								emissive: #6a0606; emissiveIntensity: 3.34; height: 256.08; metalness: 0.27; 
+								metalnessTextureOffset: -0.19 0.02; metalnessTextureRepeat: 1.25 1.83; normalScale: 0.92 1; roughness: 1"
+					rotation="50 -59.99999999999999 29.179999999999996">
+					<a-entity position="31.5 -0.1 2" text="width: 65; color: aqua; value: K; font: kelsonsans">
+					</a-entity>
+				</a-entity>
+				<a-entity id="Kptoken" geometry="primitive: torus; radius: 1.44; arc: 360.32; radiusTubular: 0.83"
+					position="11.1265 6.80808 2.53856" depth="10" scale="0.54 0.53 0.14"
+					material="alphaTest: 1; offset: -0.47 0; repeat: 1.09 1; ambientOcclusionMapIntensity: 0; 
+								ambientOcclusionTextureRepeat: 0 0; color: #f9d122; displacementBias: 0; 
+								emissive: #6a0606; emissiveIntensity: 3.34; height: 256.08; metalness: 0.27; 
+								metalnessTextureOffset: -0.19 0.02; metalnessTextureRepeat: 1.25 1.83; normalScale: 0.92 1; roughness: 1"
+					rotation="-4.43 -5.03 0">
+					<a-entity position="31.5 -0.1 2" text="width: 65; color: aqua; value: K; font: kelsonsans">
+					</a-entity>
+				</a-entity>
+			</a-entity>
+			
+		</a-box>
+		<!--****************************************  CASINO END ******************************************** -->
+
+
+		<!--************************************ Atención al cliente *****************************-->
+		<!--Portal atencion-->
+			<a-entity
+			position="35 2 -6" rotation="0 -90 0"
+			web-portal="url:http://localhost:8080/akcturnos/asignadorVirtual; text:Bienvenido;">
+			</a-entity>
+			
+			<!-- flecha -->
+			<a-entity id="flecha" position="35 5 -6" rotation="21.809 90 -179.666"
+				animation="property: position; to: 35 7 -6; dir: alternate; loop: true"
+				text="color: black; align: center; value: Bienvenido; width: 1.5" geometry="primitive: cone"
+				material="color: #1cabce; metalness: 0.46; roughness: 0.6">
+				<a-entity id="size" position="-0.069 -1.925 0.164" scale="0.593 2.837 0.539" rotation="3.875 87.323 -3.975"
+					geometry="primitive: cylinder" material="color: #1cabce; offset: -0.83 0; metalness: 0.31; roughness: 0.84">
+				</a-entity>
+			</a-entity>
+
+		<a-entity static-body="" rotation="0 -10 0" position="29.33 -0.110 -27.130" id="atencionCliente">
+			<a-box width="44" depth="22" position="12.10721 -9.92493 13.17674" rotation="90 100.53 0" src="#pisoAtencion"
+				material="offset: 0 0.01; repeat: 0.58 1; metalnessTextureOffset: -1.32 0; 
+						  ambientOcclusionMapIntensity: 1.51; ambientOcclusionTextureOffset: 0.23 1.01;
+						   ambientOcclusionTextureRepeat: 0.67 1; color: #bb8663; displacementBias: 0.7;
+						    emissiveIntensity: 0.62; roughness: 1"
+				geometry="width: 30; depth: 20; height: 49.89" id="pisoTerracota">
+			</a-box>
+		
+			<a-box static-body="" material="src: #pared; roughness: 0.9; normalTextureRepeat: 2 2; normalScale: 1 -1" 
+				position="21.255 4.828 10.186" rotation="0.05 -39.410 0" height="8" width="5" 
+				depth="4" geometry="height: 7.7" id="atencion2">
+		
+				<!-- Piso -->
+				<a-plane static-body="" src="#pisoLadrillo" rotation="90 -39.110 0" position="1.09442 -7.16672 -0.56074"
+					height="20" width="23" material="offset: 0.03 0.01; repeat: 1.04 1.06; normalTextureRepeat: 1.02 1; roughness: 0.57"
+					geometry="primitive: box; height: 20.06; width: 22.93; depth: 3.25" scale="1 1.14 1.75" id="pisoCasino">
+				</a-plane>
+			
+				<a-entity rotation="-1.08 0 0">
+					<!-- Cartel -->
+					<a-box static-body="" color="black" position="0.6569 10.00779 0.56662" width="30" height="15" depth="2"
+						material="color: #0b2a60" geometry=""> </a-box>
+					<a-box static-body="" color="white" position="0.64785 9.49608 1.26437" width="26" height="10" depth="2"
+						material="color: #ffffff" geometry=""> </a-box>
+				
+					<!-- Bombillos (arriba)-->
+					<a-entity static-body="" position="0.75429 17.2255 1.80415"
+						animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+						text="color: #fff700; align: center; value: . . . . . . . .. . . . . . . ...; width: 80">
+					</a-entity>
+				
+					<!-- Bombillos (Derecha)-->
+					<a-entity static-body="" position="13.62617 9.72713 1.65648" rotation="0 0 90"
+						animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+						text="color: #e6e600; align: center; value: . . . . . .; width: 80">
+					</a-entity>
+				
+					<!-- Bombillos (Izquierda)-->
+					<a-entity static-body="" position="-14.38603 8.94303 1.62126" rotation="0 0 90"
+						animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+						text="color: #fbfb04; align: center; value: . . . . . . .; width: 80">
+					</a-entity>
+				
+					<!-- Bombillos (abajo)-->
+					<a-entity static-body="" position="0.91911 4.51186 1.64038"
+						animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+						text="color: #f9f906; align: center; value:  . . . . . . . . . . . . . . . .; width: 80">
+					</a-entity>
+					
+					<!-- Texto -->
+					<a-entity position="0.593 13.38435 2.42063"
+						text="color: #1cabce; align: center; value: Oficina vitual; width: 60.97; font: aileronsemibold; wrapCount: 35.48"
+						id="texto">
+					</a-entity>
+					<a-entity position="0.593 10.88001 2.3756"
+						text="color: #1cabce; align: center; value: Atencion al cliente; width: 60.97; font: aileronsemibold; wrapCount: 35.48"
+						id="texto">
+					</a-entity>
+
+					<!-- imagen Aguas -->
+					<a-plane static-body="" src="#iconoAguas" position="0.75001 5.28212 2.54561" height="8" width="10"
+						material="color: #a6a0a0" geometry="height: 7.31; width: 10.03" rotation="0.34 2.68 0"> </a-plane>
+							
+				</a-entity>
+			</a-box>
+		</a-entity>
+		<!--************************************ Atención al cliente  end *****************************-->	
+
+
+
+		<!--******************************** Banco kpital ********************************************-->
+	
+		<a-entity position="-32.29404 2.3 -56.85691" id="portalBanco" rotation="0 90 0"
+			web-portal="url: https://appexp.akc.co/appexp/servlet/base/principalv1?usuario=&amp;login=externo; text: Bienvenido"
+			websurface="url: https://appexp.akc.co/appexp/servlet/base/principalv1?usuario=&amp;login=externo; width: 1.5; height: 2.4; 
+						isInteractable: false"
+			aabb-collider="objects: #web-portal-cam-tag" scale="3.62 2.11 0.74">
+		
+		</a-entity>
+
+		<!-- flecha -->
+		<a-entity id="flecha" position="-32.29404 7 -56.85691" rotation="21.809 -134.712 -179.666"
+			animation="property: position; to: -32.29404 9 -56.85691; dir: alternate; loop: true"
+			text="color: black; align: center; value: Bienvenido; width: 1.5" geometry="primitive: cone"
+			material="color: #f1ca04; metalness: 0.46; roughness: 0.6">
+			<a-entity id="size" position="-0.069 -1.925 0.164" scale="0.593 2.837 0.539" rotation="3.875 87.323 -3.975"
+				geometry="primitive: cylinder" material="color: #f1ca04; offset: -0.83 0; metalness: 0.31; roughness: 0.84">
+			</a-entity>
+		</a-entity>
+
+		<a-box static-body="" material="src: #pared; roughness: 0.9; normalTextureRepeat: 2 2; normalScale: 1 -1"
+			position="-44.924 4.648 -49.241" rotation="0.05 59.99999999999999 0" height="8" width="5" depth="4"
+			geometry="height: 7.7" id="bancoK">
+		
+			<!-- Piso -->
+			<a-box width="44" depth="22" position="1.901 -14.75 6.492" rotation="90 29.999999999999996 0" src="#pisoAtencion"
+				material="offset: 0 0.01; repeat: 0.58 1; metalnessTextureOffset: -1.32 0; ambientOcclusionMapIntensity: 1.51; 
+				ambientOcclusionTextureOffset: 0.23 1.01; ambientOcclusionTextureRepeat: 0.67 1; color: #bb8663; displacementBias: 0.7; 
+				emissiveIntensity: 0.62; roughness: 1"
+				geometry="width: 30; depth: 20; height: 49.89" id="pisoTerracota">
+			</a-box>
+		
+			<a-plane static-body="" src="#pisoLadrillo" rotation="90 -60.78 0" position="-0.05259 -7.16845 -2.54742" height="20"
+				width="23" material="offset: 0.03 0.01; repeat: 1.04 1.06; normalTextureRepeat: 1.02 1; roughness: 0.57"
+				geometry="primitive: box; height: 20.06; width: 22.93; depth: 3.25" scale="1 1.14 1.75" id="pisoCasino">
+			</a-plane>
+		
+			<a-entity rotation="-1.08 0 0">
+				<!-- Cartel -->
+				<a-box static-body="" color="black" position="1.16575 10.01307 0.27288" width="30" height="15" depth="2"
+					material="" geometry=""> </a-box>
+				<a-box static-body="" color="white" position="1.31344 9.50299 0.88015" width="26" height="10" depth="2"
+					material="color: #034054" geometry=""> </a-box>
+		
+				<!-- Bombillos (arriba)-->
+				<a-entity static-body="" position="1.3 17 2.3"
+					animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+					text="color: yellow; align: center; value: . . . . . . . . . . . . . . . .; width: 80">
+				</a-entity>
+		
+				<!-- Bombillos (Derecha)-->
+				<a-entity static-body="" position="14 9.5 2.3" rotation="0 0 90"
+					animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+					text="color: yellow; align: center; value: . . . . . .; width: 80">
+				</a-entity>
+		
+				<!-- Bombillos (Izquierda)-->
+				<a-entity static-body="" position="-14 9.5 2.3" rotation="0 0 90"
+					animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+					text="color: yellow; align: center; value: . . . . . . .; width: 80">
+				</a-entity>
+		
+				<!-- Bombillos (abajo)-->
+				<a-entity static-body="" position="1.3 4.5 2.3"
+					animation="property: components.text.material.uniforms.opacity.value; to: 0; dir: alternate; loop: true"
+					text="color: yellow; align: center; value: . . . . . . . . . . . . . . . .; width: 80">
+				</a-entity>
+		
+				<!-- Texto -->
+				<a-entity position="2.1 12.2 2.3"
+					animation="property: components.text.material.uniforms.color.value; type: color; to: #f1ca04; dir: alternate"
+					text="color: #f1ca04; align: center; value: Boton de pago; width: 78; font: kelsonsans; alphaTest: 0.68; letterSpacing: 1.19; xOffset: -0.3">
+				</a-entity>
+		
+				<a-obj-model src="./Dollar.obj" rotation="90 90 90" position="0.10907 6.44564 2.93663" scale="0.1 0.1 0.1"
+					color="yellow" material="color: #f1e904; emissive: #241100; metalness: 0.45" obj-model=""> </a-obj-model>
+		
+					
+			</a-entity>
+		</a-box>
+
+			
+		<!-- banco kpital end -->
+		
+
+
+	</a-scene>
+</body>
+
+</html>
