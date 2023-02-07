@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styleCine.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel2@2.2.2/dist/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>Teatro Kpital</title>
+</head>
+
+<body>
+
+  <div class="container" style="margin:5px auto;">
+    <div class="titulo">
+      <h1>Bienvenido al teatro Kpital 📺</h1>
+      <p class="lead">seleccione el video que desee ver</p>
+    </div>
+
+        <!-- player wrapper -->
+        <!-- <div class="" style=" display:flex; flex-direction:column; backdrop-filter: blur(23px) saturate(200%);
+        -webkit-backdrop-filter: blur(23px) saturate(200%);
+        background-color: rgba(17, 25, 40, 0.94);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);;padding: 30px; border-radius: 3em;">
+          <div class="embed__container">
+            <div id="player"></div>
+          </div>
+          <div class="carousel__wrap mt-2" style=" border:solid;">
+            <div class="owl-carousel">
+              <div data-video="qNuSWuJIqUQ" class="item video-thumb active">
+                <img src="https://img.youtube.com/vi/qNuSWuJIqUQ/hqdefault.jpg" />
+              </div>
+              <div data-video="q7OsiTDF4Ro" class="item video-thumb ">
+                <img src="https://img.youtube.com/vi/q7OsiTDF4Ro/hqdefault.jpg" />
+              </div>
+              <div data-video="wyIwUt0_yPo" class="item video-thumb">
+                <img src="https://img.youtube.com/vi/wyIwUt0_yPo/hqdefault.jpg" />
+              </div>
+              <div data-video="nQpdzMrDnUc" class="item video-thumb">
+                <img src="https://img.youtube.com/vi/nQpdzMrDnUc/hqdefault.jpg" />
+              </div>
+              <div data-video="lZjVflIem8A" class="item video-thumb">
+                <img src="https://img.youtube.com/vi/lZjVflIem8A/hqdefault.jpg" />
+              </div>
+              <div data-video="E8KNgMvV4dc" class="item video-thumb">
+                <img src="https://img.youtube.com/vi/E8KNgMvV4dc/hqdefault.jpg" />
+              </div>
+              <div data-video="B6hw9qXssNM" class="item video-thumb">
+                <img src="https://img.youtube.com/vi/B6hw9qXssNM/hqdefault.jpg" />
+              </div>
+            </div>
+        </div>
+      </div> -->
+      
+
+      <!-- <iframe src="https://sites.google.com/akc.co/teatrokpital/inicio"
+      width="100%" height="500" frameborder="0"
+      allowfullscreen sandbox>
+      <p> <a href="https://sites.google.com/akc.co/teatrokpital/inicio">
+        Fallback link for browsers that don't support iframes
+      </a> </p>
+      </iframe> -->
+      
+
+      <!-- <iframe src="https://sites.google.com/menendezypelayo.es/curso1920/p%C3%A1gina-principal"
+			style="border: 0; width: 97%; height:95vh;" 
+			sandbox="allow-scripts allow-same-origin">
+		</iframe> -->
+    <!-- <iframe src="https://sites.google.com/view/akc.co/teatrokpital/inicio" width="600" height="400"></iframe> -->
+    <div id="google-site-container"></div>
+    <!-- <object data="https://sites.google.com/akc.co/teatrokpital/inicio"
+      width="800"
+      height="800"
+      type="text/html">
+      </object> -->
+    </div>
+
+  <!-- main scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/owl.carousel2@2.2.2/dist/owl.carousel.min.js"></script>
+  <script src="./js/jsCine.js"></script>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("#google-site-container").load("https://www.youtube.com/watch?v=1PmV-eiNMtI&list=PLCKuOXG0bPi1_ZY2c9LU7MvvtWk82x1wB&ab_channel=FernandoHerrera");
+  });
+  </script>
+</body>
+
+</html>
